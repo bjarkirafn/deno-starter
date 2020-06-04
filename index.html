@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zeit Now Deno</title>
+  </head>
+  <body>
+    <h1>Welcome to Deno deploy to Now test!</h1>
+    <div id="content">contacting api...</div>
+    <script type="module">
+      (async () => {
+        const resp = await fetch('/api/version');
+        document.getElementById('content').innerText = await resp.text();
+      })();
+    </script>
+  </body>
+</html>
